@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 const env = dotenv.config();
 app.enable("trust proxy");
 
-const PORT = process.env.PORT || 9001;
+const PORT = process.env.PORT;
 const server = app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log("Press Ctrl+C to quit.");
@@ -15,6 +15,6 @@ const peerServer = ExpressPeerServer(server, {
   path: "/",
 });
 
-app.use("/myapp", peerServer);
+app.use("/", peerServer);
 
 module.exports = app;
