@@ -4,8 +4,7 @@ const app = express();
 
 app.enable("trust proxy");
 
-//const PORT = process.env.PORT;
-const PORT = 9001;
+const PORT = process.env.PORT;
 const server = app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log("Press Ctrl+C to quit.");
